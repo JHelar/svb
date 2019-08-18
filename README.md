@@ -34,7 +34,7 @@ This package should be installed globally.
 Using npm:
 
 ```bash
-$ npm install -g sitevision-boilerplate-cli
+$ npm install -g svhiq
 ```
 
 ## Commands
@@ -43,7 +43,7 @@ Every command needs atleast a `name` and `task`.
 
 Commandshape: 
 ```bash
-$ svb <task> <name> '<optional folderpath>' [options]
+$ svhiq <task> <name> '<optional folderpath>' [options]
 ```
 
 A `name` is what type you are trying to target:
@@ -67,17 +67,17 @@ A `task` is what action you are trying to do towards the `name`:
 
 Create a webapp named "myWebapp" in current directory
 ```bash
-$ svb create webapp myWebapp
+$ svhiq create webapp myWebapp
 ```
 
 Create a webapp named "myWebapp" with a VUE client
 ```bash
-$ svb create webapp myWebapp --vue
+$ svhiq create webapp myWebapp --vue
 ```
 
 Deploy the webapp to remote.
 ```bash
-$ svb deploy webapp -f
+$ svhiq deploy webapp -f
 ```
 In the `package.json` file you can find allready premade script tasks that are more suitable to the current `project`, `webapp` or `restapp`.
 
@@ -87,7 +87,7 @@ These are the boilerplates and their structures
 ### Webapp
 Webapps can be created with or without the `--vue` option.
 ```bash
-$ svb create webapp myApp
+$ svhiq create webapp myApp
 ```
 
 #### With VUE client
@@ -103,7 +103,7 @@ $ npm run force-deploy-vue
 ```
 or
 ```bash
-$ svb deploy webapp -f --vue
+$ svhiq deploy webapp -f --vue
 ```
 When deploying with `--vue` the vue application will be built, .js files will be moved to the app `src/resource` folder and all styles will be moved to `src/css` folder. 
 A script will then automaticly update the `script` tag in `src/template/main.html` to point to the newly generated file.

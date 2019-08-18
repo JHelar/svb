@@ -11,7 +11,7 @@
 		"restapp"
 	],
 	"bin": {
-		"svb": "./dist/index.js"
+		"svhiq": "./dist/index.js"
 	},
 	"scripts": {
 		"test": "jest --coverage",
@@ -21,14 +21,14 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/JHelar/svb.git@v3.0"
+		"url": "git+https://github.com/JHelar/svhiq.git@v3.0"
 	},
 	"author": "John Larsson, <john.helarsson@gmail.se>",
 	"license": "ISC",
 	"bugs": {
-		"url": "https://github.com/JHelar/svb/issues"
+		"url": "https://github.com/JHelar/svhiq/issues"
 	},
-	"homepage": "https://github.com/JHelar/svb#readme",
+	"homepage": "https://github.com/JHelar/svhiq#readme",
 	"devDependencies": {
 		"@types/colors": "^1.2.1",
 		"@types/execa": "^0.9.0",

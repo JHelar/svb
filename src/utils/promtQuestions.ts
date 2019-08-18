@@ -1,7 +1,7 @@
 import { Question, prompt } from "inquirer";
 import makeConsole from './console';
 
-const console = makeConsole('SVB');
+const console = makeConsole('SVHIQ');
 
 export default <TOptions = { [key: string]: any }, TDefaults = TOptions>(questions: Question[], options?: TOptions, title?: string, defaults?: TDefaults): Promise<TOptions> => {
 	if (options) {

@@ -1,14 +1,14 @@
 {
-	"name": "svb-projects",
+	"name": "svhiq-projects",
 	"version": "1.0.0",
 	"description": "",
 	"main": "",
 	"scripts": {
-	  "watch": "svb watch project",
-	  "watch-prod": "svb watch project -p"
+	  "watch": "svhiq watch project",
+	  "watch-prod": "svhiq watch project -p"
 	},
 	"devDependencies": {
-		"sitevision-boilerplate-cli": "~4.0.0"
+		"svhiq": "~3.4.0"
 	},
 	"dependencies": {
 		"uuid": "^3.3.2"

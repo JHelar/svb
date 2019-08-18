@@ -1,12 +1,12 @@
 {
-	"name": "svb-webapp",
+	"name": "svhiq-webapp",
 	"version": "1.0.0",
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"deploy": "svb deploy restapp",
-		"force-deploy": "svb deploy restapp -f",
-		"prod-deploy": "svb deploy restapp -p -f"
+		"deploy": "svhiq deploy restapp",
+		"force-deploy": "svhiq deploy restapp -f",
+		"prod-deploy": "svhiq deploy restapp -p -f"
 	},
 	"devDependencies": {
 		"sitevision-boilerplate-cli": "~4.0.0"
