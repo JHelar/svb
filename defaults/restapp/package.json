@@ -1,0 +1,17 @@
+{
+	"name": "svhiq-webapp",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"deploy": "svhiq deploy restapp",
+		"force-deploy": "svhiq deploy restapp -f",
+		"prod-deploy": "svhiq deploy restapp -p -f"
+	},
+	"devDependencies": {
+		"svhiq": "^3.1.21"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC"
+}

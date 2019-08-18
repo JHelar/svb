@@ -1,0 +1,3 @@
+.prod-settings.json
+.dev-settings.json
+node_modules

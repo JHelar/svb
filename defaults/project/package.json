@@ -1,0 +1,20 @@
+{
+	"name": "svhiq-projects",
+	"version": "1.0.0",
+	"description": "",
+	"main": "",
+	"scripts": {
+	  "watch": "svhiq watch project",
+	  "watch-prod": "svhiq watch project -p"
+	},
+	"devDependencies": {
+		"svhiq": "^3.1.21"
+	},
+	"dependencies": {
+		"uuid": "^3.3.2"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC"
+  }
+  

@@ -1,0 +1,18 @@
+{
+	"name": "svhiq-webapp",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"deploy": "svhiq deploy webapp --vue",
+		"force-deploy": "svhiq deploy webapp -f",
+		"force-deploy-vue": "svhiq deploy webapp -f --vue",
+		"prod-deploy": "svhiq deploy webapp -p -f --vue"
+	},
+	"devDependencies": {
+		"svhiq": "^3.1.21"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC"
+}

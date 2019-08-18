@@ -1,0 +1,120 @@
+@import './foundation-sites/util';
+
+@mixin ie-only($breakpoint: small) {
+	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+		@content;
+	}
+}
+
+@mixin safari-only {
+	@media not all and (min-resolution: 0.001dpcm) {
+		@supports (-webkit-appearance: none) {
+			@content;
+		}
+	}
+}
+
+@mixin fluid-type($properties, $min-vw, $max-vw, $min-value, $max-value) {
+	@each $property in $properties {
+		#{$property}: $min-value;
+	}
+
+	@media (min-width: $min-vw) {
+		@each $property in $properties {
+			#{$property}: calc(
+				#{$min-value} +
+					#{strip-unit($max-value - $min-value)} *
+					(100vw - #{$min-vw}) /
+					#{strip-unit($max-vw - $min-vw)}
+			);
+		}
+	}
+
+	@media (min-width: $max-vw) {
+		@each $property in $properties {
+			#{$property}: $max-value;
+		}
+	}
+}
+
+@function strip-unit($number) {
+	@if type-of($number) == 'number' and not unitless($number) {
+		@return $number / ($number * 0 + 1);
+	}
+
+	@return $number;
+}
+
+@mixin show-for-sr {
+	clip: rect(1px, 1px, 1px, 1px);
+	height: 1px;
+	overflow: hidden;
+	position: absolute !important;
+	width: 1px;
+}
+
+@mixin toggle-button-open($toggler: &) {
+	@if $toggler == & {
+		&[aria-expanded='true'] {
+			@content;
+		}
+	} @else {
+		#{$toggler}[aria-expanded='true'] & {
+			@content;
+		}
+	}
+}
+
+@mixin toggle-button-closed($toggler: &) {
+	@if $toggler == & {
+		&[aria-expanded='false'] {
+			@content;
+		}
+	} @else {
+		#{$toggler}[aria-expanded='false'] & {
+			@content;
+		}
+	}
+}
+
+@mixin toggle-area-open($area: &) {
+	@if $area == & {
+		&[data-open='true'] {
+			@content;
+		}
+	} @else {
+		#{$area}[data-open='true'] & {
+			@content;
+		}
+	}
+}
+
+@mixin toggle-area-closed($area: &) {
+	@if $area == & {
+		&[data-open='false'] {
+			@content;
+		}
+	} @else {
+		#{$area}[data-open='false'] & {
+			@content;
+		}
+	}
+}
+
+@mixin toggle-max-height {
+	max-height: 0;
+	overflow: hidden;
+	visibility: hidden;
+
+	transition: max-height $animationDuration cubic-bezier(0, 1, 0, 1),
+		visibility 0s linear $animationDuration;
+
+	@include toggle-area-open {
+		max-height: 1000vh;
+		overflow: unset;
+		overflow: initial;
+		visibility: visible;
+
+		transition: max-height $animationDuration ease-in-out;
+	}
+}

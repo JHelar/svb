@@ -1,0 +1,8 @@
+/src
+/test
+/tsconfig.json
+/tslint.json
+/coverage
+/jest.config.js
+/__mocks__
+/.vscode

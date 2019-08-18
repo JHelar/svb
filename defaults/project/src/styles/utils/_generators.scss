@@ -1,0 +1,112 @@
+@import 'variables';
+@import 'mixins';
+
+// Generates distance classes in format: m-DIRECTION:VALUE@BREAKPOINT and p-DIRECTION:VALUE@BREAKPOINT for margin and padding.
+// Directions: t - top, b - bottom, l - left, r - right, a - around. The around direction have the least importance.
+// Classes generated mobile first, small breakpoint is thus omited and is writted without the '@'-sign.
+@mixin generate-distance-classes {
+    $directions: (t: '-top', b: '-bottom', l: '-left', r: '-right', a: '');
+
+    @each $breakpoint in $breakpoint-classes {
+        $sizeName: \@#{$breakpoint};
+        @if $breakpoint == small { // if name is small, set empty string
+            $sizeName: '';
+        }
+        
+        @include breakpoint($breakpoint) {
+            @for $i from 0 through 20 {
+                $baseName: \:#{10 * ($i * 0.5)}#{$sizeName};
+                @each $directionName, $directionValue in $directions {
+                    
+                    $paddingName: '.#{$prefix}-p-#{$directionName}#{$baseName}';
+                    $marginName: '.#{$prefix}-m-#{$directionName}#{$baseName}';
+
+                    #{$paddingName}{
+                        padding#{$directionValue}: #{$i * 0.5}rem;
+                    }
+                    #{$marginName}{
+                        margin#{$directionValue}: #{$i * 0.5}rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Generates color classes for text color and backgorund color in format: c:COLOR and bg:COLOR for text color and background color.
+// Also adds an optional hover state -> c:COLOR\hover and bg:COLOR\hover, this adds the given color to the focus and hover of the element.
+// Avaiable colors are specified in the colors map in variables.scss.
+@mixin generate-color-classes {
+    @each $colorName, $colorValue in $colors {
+        .#{$prefix}-c\:#{$colorName} {
+            &,
+            &\hover:hover,
+            &\hover:focus {
+                color: #{$colorValue};
+            }
+        }
+        .#{$prefix}-bg\:#{$colorName} {
+            &,
+            &\hover:hover,
+            &\hover:focus {
+                background-color: #{$colorValue};
+            }
+        }
+    }
+}
+
+@mixin get-font($fontName, $overrides: ()) {
+	$fontRules: map-get(
+		$map: $header-styles,
+		$key: $fontName
+	);
+	@if $fontRules {
+		@each $ruleName, $value in $fontRules {
+			@if map-has-key($map: $overrides, $key: $ruleName) {
+				$value: map-get($map: $overrides, $key: $ruleName);
+			}
+
+			@if $ruleName == font-size {
+				@if type-of($value: $value) == 'map' {
+					@include fluid-type(
+						font-size,
+						map-get($breakpoints, small),
+						map-get($breakpoints, xlarge),
+						map-get($value, min),
+						map-get($value, max)
+					);
+				} @else {
+					font-size: $value;
+				}
+			} @else {
+				#{$ruleName}: $value;
+			}
+		}
+	}
+}
+
+// Generates header styles and classes in format: f-s:HEADER_NAME.
+// This also generates the general stylings for header and paragraph elements.
+// Header styles are declared in varables.scss.
+@mixin generate-headers($base-class: 'f-s') {
+	@each $headerName, $rules in $header-styles { 
+		#{$headerName},
+		.#{$prefix}-#{$headerName} {
+			@include get-font($headerName);
+		}
+	}
+	@each $colorName, $colorValue in $colors {
+		@each $headerName, $rules in $header-styles {
+			.#{$prefix}-#{$headerName}--#{$colorName} {
+				color: $colorValue;
+				@include get-font($headerName);
+			}
+		}
+	}
+}
+
+@mixin generate-site {
+    @include generate-distance-classes;
+    @include generate-color-classes;
+    @include generate-headers;
+}

@@ -1,0 +1,4 @@
+node_modules
+dist
+.prod-settings.json
+.dev-settings.json
