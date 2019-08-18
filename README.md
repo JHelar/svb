@@ -1,8 +1,6 @@
 # Sitevision boilerplate CLI
 A cli interface to create, develop and maintain sitevision projects, webapps and restapps.
 
-Created by: John Larsson
-
 ## Description
 
 This CLI was made in order to make SiteVision development easier and more fun.
