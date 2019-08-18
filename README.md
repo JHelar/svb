@@ -34,7 +34,7 @@ This package should be installed globally.
 Using npm:
 
 ```bash
-$ npm install -g svb
+$ npm install -g sitevision-boilerplate-cli
 ```
 
 ## Commands

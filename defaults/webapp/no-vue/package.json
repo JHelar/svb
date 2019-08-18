@@ -9,7 +9,7 @@
 		"prod-deploy": "svb deploy webapp -p -f"
 	},
 	"devDependencies": {
-		"svb": "^3.1.21"
+		"sitevision-boilerplate-cli": "~4.0.0"
 	},
 	"keywords": [],
 	"author": "",

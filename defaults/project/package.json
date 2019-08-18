@@ -8,7 +8,7 @@
 	  "watch-prod": "svb watch project -p"
 	},
 	"devDependencies": {
-		"svb": "^3.1.21"
+		"sitevision-boilerplate-cli": "~4.0.0"
 	},
 	"dependencies": {
 		"uuid": "^3.3.2"
