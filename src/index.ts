@@ -4,7 +4,7 @@ import commander from './commander';
 
 import makeConsole from './utils/console';
 
-const console = makeConsole('SVHIQ');
+const console = makeConsole('SVB');
 console.clear();
 console.time('Task took');
 try {

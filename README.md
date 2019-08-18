@@ -1,7 +1,7 @@
 # Sitevision boilerplate CLI
-A cli interface to create sitevision projects, webapps and restapps.
+A cli interface to create, develop and maintain sitevision projects, webapps and restapps.
 
-Created by: John Larsson, HiQ Mälardalen 
+Created by: John Larsson
 
 ## Description
 
@@ -36,7 +36,7 @@ This package should be installed globally.
 Using npm:
 
 ```bash
-$ npm install -g svhiq
+$ npm install -g svb
 ```
 
 ## Commands
@@ -45,7 +45,7 @@ Every command needs atleast a `name` and `task`.
 
 Commandshape: 
 ```bash
-$ svhiq <task> <name> '<optional folderpath>' [options]
+$ svb <task> <name> '<optional folderpath>' [options]
 ```
 
 A `name` is what type you are trying to target:
@@ -69,17 +69,17 @@ A `task` is what action you are trying to do towards the `name`:
 
 Create a webapp named "myWebapp" in current directory
 ```bash
-$ svhiq create webapp myWebapp
+$ svb create webapp myWebapp
 ```
 
 Create a webapp named "myWebapp" with a VUE client
 ```bash
-$ svhiq create webapp myWebapp --vue
+$ svb create webapp myWebapp --vue
 ```
 
 Deploy the webapp to remote.
 ```bash
-$ svhiq deploy webapp -f
+$ svb deploy webapp -f
 ```
 In the `package.json` file you can find allready premade script tasks that are more suitable to the current `project`, `webapp` or `restapp`.
 
@@ -89,7 +89,7 @@ These are the boilerplates and their structures
 ### Webapp
 Webapps can be created with or without the `--vue` option.
 ```bash
-$ svhiq create webapp myApp
+$ svb create webapp myApp
 ```
 
 #### With VUE client
@@ -105,7 +105,7 @@ $ npm run force-deploy-vue
 ```
 or
 ```bash
-$ svhiq deploy webapp -f --vue
+$ svb deploy webapp -f --vue
 ```
 When deploying with `--vue` the vue application will be built, .js files will be moved to the app `src/resource` folder and all styles will be moved to `src/css` folder. 
 A script will then automaticly update the `script` tag in `src/template/main.html` to point to the newly generated file.

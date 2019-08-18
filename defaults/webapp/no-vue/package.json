@@ -1,15 +1,15 @@
 {
-	"name": "svhiq-webapp",
+	"name": "svb-webapp",
 	"version": "1.0.0",
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"deploy": "svhiq deploy webapp",
-		"force-deploy": "svhiq deploy webapp -f",
-		"prod-deploy": "svhiq deploy webapp -p -f"
+		"deploy": "svb deploy webapp",
+		"force-deploy": "svb deploy webapp -f",
+		"prod-deploy": "svb deploy webapp -p -f"
 	},
 	"devDependencies": {
-		"svhiq": "^3.1.21"
+		"svb": "^3.1.21"
 	},
 	"keywords": [],
 	"author": "",

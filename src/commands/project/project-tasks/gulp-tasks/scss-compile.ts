@@ -28,7 +28,7 @@ const partialResolver = (id: string, basedir: string, importOptions: any) => new
 const task: ITaskCreator<IScssCompileTaskOptions> = (paths, destination, base, options) => {
 	const scss = require('gulp-sass');
 	const autoprefixer = require('gulp-autoprefixer');
-	const cssnano = require('gulp-cssnano');
+	const cleanCSS = require('gulp-clean-css');
 	const rename = require('gulp-rename');
 	const sassGlob = require('gulp-sass-glob');
 
@@ -41,7 +41,7 @@ const task: ITaskCreator<IScssCompileTaskOptions> = (paths, destination, base, o
 			.pipe(sassGlob())
 			.pipe(scss({outputStyle: 'compressed'}))
 			.pipe(autoprefixer())
-			.pipe(cssnano({zindex: false, discardUnused: false}))
+			.pipe(cleanCSS())
 			.pipe(rename({
 				extname: '.css'
 			}))

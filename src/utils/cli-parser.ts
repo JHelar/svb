@@ -14,7 +14,7 @@ export interface ICommandHash {
 
 export default () => {
 	const myCommands = yargs
-		.usage('Usage: svhiq <task> <type> [options]')
+		.usage('Usage: svb <task> <type> [options]')
 		.demandCommand(2)
 		.option('force', {
 			alias: 'f',
@@ -30,8 +30,8 @@ export default () => {
 		// .command('create webapp', 'Create a webapp')
 		// .command('create project', 'Create a new project')
 		// .command('deploy webapp', 'Deploy a webapp')
-		.example('svhiq create webapp my-webapp', 'Create a new webapp called my-webapp in current directory')
-		.example('svhiq deploy webapp', 'Deploy the webapp in current directory')
+		.example('svb create webapp my-webapp', 'Create a new webapp called my-webapp in current directory')
+		.example('svb deploy webapp', 'Deploy the webapp in current directory')
 		.help('h', 'help')
 		.epilog('Copyright 2019')
 		.exitProcess(false);

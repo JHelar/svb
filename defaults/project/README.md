@@ -1,10 +1,10 @@
 # Sitevision boilerplate
-SiteVision project created by [SVHIQ]: https://www.npmjs.com/package/svhiq boilerplate.
+SiteVision project created by [svb]: https://www.npmjs.com/package/svb boilerplate.
 
 ## Installation
 To run the project you need Node > v9.0 installed. 
 
-It is also recommended to install the `svhiq` package: `npm i -g svhiq`
+It is also recommended to install the `svb` package: `npm i -g svb`
 
 When installed run `npm install`.
 

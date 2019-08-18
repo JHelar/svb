@@ -1,7 +1,7 @@
 {
-	"name": "svhiq",
+	"name": "svb",
 	"version": "3.2.0",
-	"description": "Boilerplate CLI to create sitevision projects and webapps",
+	"description": "CLI tool for creation, development and deployment of Sitevision web projects",
 	"main": "./dist/index.js",
 	"keywords": [
 		"sitevision",
@@ -11,7 +11,7 @@
 		"restapp"
 	],
 	"bin": {
-		"svhiq": "./dist/index.js"
+		"svb": "./dist/index.js"
 	},
 	"scripts": {
 		"test": "jest --coverage",
@@ -21,14 +21,14 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/Hiqmalardalen/SiteVisionBoilerplate.git@v3.0"
+		"url": "git+https://github.com/JHelar/svb.git@v3.0"
 	},
-	"author": "John Larsson, <john.larsson@hiq.se>",
+	"author": "John Larsson, <john.helarsson@gmail.se>",
 	"license": "ISC",
 	"bugs": {
-		"url": "https://github.com/Hiqmalardalen/SiteVisionBoilerplate/issues"
+		"url": "https://github.com/JHelar/svb/issues"
 	},
-	"homepage": "https://github.com/Hiqmalardalen/SiteVisionBoilerplate#readme",
+	"homepage": "https://github.com/JHelar/svb#readme",
 	"devDependencies": {
 		"@types/colors": "^1.2.1",
 		"@types/execa": "^0.9.0",
@@ -50,28 +50,28 @@
 		"typescript": "^3.3.3"
 	},
 	"dependencies": {
-		"@types/is-windows": "^0.2.0",
-		"colors": "^1.3.3",
-		"execa": "^1.0.0",
-		"fs-extra": "^7.0.1",
-		"gulp": "^4.0.0",
-		"gulp-autoprefixer": "^6.0.0",
-		"gulp-cssnano": "^2.1.3",
-		"gulp-hiq-module-resolver": "^1.1.0",
-		"gulp-hiq-webdav": "^1.1.2",
-		"gulp-plumber": "^1.2.1",
-		"gulp-rename": "^1.4.0",
-		"gulp-sass": "^4.0.2",
-		"gulp-sass-glob": "^1.0.9",
-		"inquirer": "^6.2.2",
-		"is-windows": "^1.0.2",
-		"listr": "^0.14.3",
-		"node-sass": "^4.12.0",
-		"query-string": "^6.2.0",
+		"@types/is-windows": "0.2.0",
+		"colors": "1.3.3",
+		"execa": "1.0.0",
+		"fs-extra": "7.0.1",
+		"gulp": "4.0.0",
+		"gulp-autoprefixer": "6.0.0",
+		"gulp-clean-css": "4.2.0",
+		"gulp-hiq-module-resolver": "1.1.0",
+		"gulp-hiq-webdav": "1.1.2",
+		"gulp-plumber": "1.2.1",
+		"gulp-rename": "1.4.0",
+		"gulp-sass": "4.0.2",
+		"gulp-sass-glob": "1.0.9",
+		"inquirer": "6.2.2",
+		"is-windows": "1.0.2",
+		"listr": "0.14.3",
+		"node-sass": "4.12.0",
+		"query-string": "6.2.0",
 		"request": "2.88.0",
-		"resolve": "^1.10.0",
-		"uuid": "^3.3.2",
-		"yargs": "^13.2.1",
-		"zip-dir": "^1.0.2"
+		"resolve": "1.10.0",
+		"uuid": "3.3.2",
+		"yargs": "13.2.1",
+		"zip-dir": "1.0.2"
 	}
 }
