@@ -1,5 +1,5 @@
 {
-	"name": "svb",
+	"name": "SV boilerplate CLI",
 	"version": "4.0.0",
 	"description": "CLI tool for creation, development and deployment of Sitevision web projects",
 	"main": "./dist/index.js",
